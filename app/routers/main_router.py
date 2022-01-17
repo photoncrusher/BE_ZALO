@@ -6,6 +6,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
+@app.get("/")
+def hello():
+    return {"message":"Hello TutLinks.com"}
 app.include_router(auth_router.router, prefix= "/it4788")
 app.include_router(post_router.router, prefix= "/it4788")
 app.include_router(comment_router.router, prefix= "/it4788")
